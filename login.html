@@ -12,14 +12,14 @@
 <body>
     <header>
         <nav class="navbar">
-            <i class="fa-solid fa-bars menu-icon"> Menu</i>
+            <i class="fa-solid fa-bars menu-icon"></i>
             <a href="#" class="logo">
                 <img src="photo/logonoBG.png" alt="logo">
 
             </a>
             <ul class="links">
                 <i class="fa-solid fa-xmark close-icon"></i>
-                <li><a href="#">Home</a></li>
+                <li><a href="#" onclick="showSuccessToast()">Home</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="#">Portfolio</a></li>
                 <li><a href="#">About us</a></li>
@@ -29,6 +29,7 @@
         </nav>
     </header>
     <div class="blur-bg-overlay"></div>
+    <div id="toast"></div>
     <div class="form-popup">
         <i class="fa-solid fa-xmark close-icon"></i>
         <div class="form-box login">
@@ -90,5 +91,6 @@
         </div>
         
     </div>
+    <script src="login.js"></script>
 </body>
 </html>
