@@ -54,6 +54,7 @@ function toast({
         }
         const icons = {
             info: 'ti-info-alt',
+            success: 'ti-check',
         }
         const icon = icons[type];
         const delay = (duration / 1000).toFixed(2);
@@ -83,3 +84,25 @@ function showInfoToast () {
     duration: 3000
     });
 }
+function signUpSuccess(){
+    toast({
+        title: 'Notification',
+        message: 'Bạn đã đăng kí thành công',
+        type: 'success',
+        duration: 3000
+    });
+}
+
+
+const loginSM = document.querySelector(".submit-login");
+const signupSM = document.querySelector(".submit-signup");
+
+loginSM.addEventListener("click",()=>{
+    window.location.href = "home.html"
+});
+
+signupSM.addEventListener("click",()=>{
+
+    hidePopupBtn.click();
+    signUpSuccess();
+})
