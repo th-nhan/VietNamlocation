@@ -53,10 +53,7 @@ function toast({
             }
         }
         const icons = {
-            success: 'ti-check',
             info: 'ti-info-alt',
-            warning: 'ti-help-alt',
-            error: 'ti-face-sad',
         }
         const icon = icons[type];
         const delay = (duration / 1000).toFixed(2);
@@ -78,35 +75,11 @@ function toast({
         main.appendChild(toast);
     }
 }
-function showSuccessToast () {
-    toast ({
-    title: 'Success',
-    message: 'You login successed',
-    type: 'success',
-    duration: 3000
-    });
-}
 function showInfoToast () {
     toast ({
-    title: 'Info',
-    message: 'Your info will be check soon',
+    title: 'Notification',
+    message: 'Bạn cần đăng nhập!!',
     type: 'info',
-    duration: 3000
-    });
-}
-function showWarningToast () {
-    toast ({
-    title: 'Warning',
-    message: 'Please check your form again!!',
-    type: 'warning',
-    duration: 3000
-    });
-}
-function showErrorToast () {
-    toast ({
-    title: 'Error',
-    message: 'Please try again',
-    type: 'error',
     duration: 3000
     });
 }
