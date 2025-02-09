@@ -47,13 +47,16 @@ header{
 .navbar .all-links{
     display: flex;
     align-items: center;
+    flex: 2;
 }
 
 .navbar .all-links li{
     position: relative;
     list-style: none;
 }
-
+.navbar .logo{
+    flex: 1;
+}
 .navbar .logo a{
     display: flex;
     align-items: center;
