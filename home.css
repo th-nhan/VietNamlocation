@@ -190,16 +190,12 @@ section .cards .card{
 }
 
 
-section .about{
-    margin: 0 auto;
-    max-width: 1200px;
-}
 
-.portfolio .cards .card {
+.destination .cards .card {
     padding: 0 0 20px;
 }
 
-.portfolio .card img {
+.destination .card img {
     width: 100%;
     padding-bottom: 10px;
     aspect-ratio: 16 / 9;
@@ -213,8 +209,31 @@ section .about{
     margin-top: 5px;
 }
   
+section.about {
+    margin: 0 auto;
+    max-width: 1200px;
+}
 
+.about .company-info{
+    margin-top: 30px;
+}
 
+.about h3{
+    margin: 30px 0 10px;
+}
+
+.about .team{
+    text-align: left;
+    width: 100%;
+}
+
+.about .team ul{
+    padding-left: 20px;
+}
+
+.about .row{
+    padding: 0 10px;
+}
 
 
 
