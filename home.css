@@ -293,12 +293,120 @@ section.about {
     background: #525252;
 }
 
+/* review */
+
+section.review{
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.review .section-subtitle{
+    text-align: center;
+}
+.review .section-title,
+.review .section-description{
+    color: #333;
+    text-align: center;
+}
 
 
+.testi-content{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    row-gap: 2rem;
+    flex-direction: column;
+}  
+
+.testi-content i{
+    font-weight: 700;
+    color: #333;
+    font-size: 38px;
+}
+
+.review-img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: 35px 0 10px;
+}
+.review-quote{
+    padding: 0 15rem;
+    text-align: center;
+}
+.quote-icon{
+    font-size: 3rem;
+}
+.testi-personDetails{
+    flex-direction: column;
+}
+.testi-personDetails .name{
+    font-size: 1.8rem;
+    
+}  
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+.swiper-slide{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
 
 
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
 
+    
+} 
 
+.swiper-slide::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: var(--z-overlay);
+}
+  
+.flex{
+    display: flex;
+    align-items: center;
+    column-gap: 0.6rem;
+}
+  
+
+/* swiper btn */
+.review .swiper-navBtn{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.review .swiper-button-next{
+    display: block;
+    right: 2rem;
+    transform: translateY(2rem);
+}
+.review .swiper-button-prev{
+    display: block;
+    left: 2rem;
+    transform: translateY(2rem);
+}
+.review .swiper-navBtn:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
 
 
 @media screen and (max-width:860px) {
