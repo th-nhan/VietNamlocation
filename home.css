@@ -235,6 +235,63 @@ section.about {
     padding: 0 10px;
 }
 
+.contact .row {
+    margin: 60px 0 90px;
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact .row .col {
+    padding: 0 10px;
+    width: calc(100%/2 - 50px);
+}
+
+.contact .col p{
+    margin-bottom: 10px;
+}
+
+.contact .col p i{
+    color: #7a7a7a;
+    margin-right: 10px;
+}
+
+.contact form input{
+    height: 45px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #bfbfbf;
+}
+
+.contact form textarea{
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    height: 150px;
+    outline: none;
+}
+
+.contact form button{
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 17px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    background: #333;
+    border-radius: 5px;
+    transition:  color 0.3s ease;
+
+}
+
+.contact form button:hover {
+    background: #525252;
+}
 
 
 
