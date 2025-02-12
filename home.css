@@ -353,10 +353,21 @@ section.review{
     padding: 0;
     z-index: 1;
 }
-.swiper-slide{
-    position: relative;
+.swiper-slider{
+    /* position: relative;
     height: 100vh;
-    width: 100%;
+    width: 100%; */
+    display: flex !important; 
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.swiper-slider .active {
+    display: block;
 }
 
 
@@ -372,7 +383,7 @@ section.review{
     
 } 
 
-.swiper-slide::before{
+.swiper-slider::before{
     content: '';
     position: absolute;
     left: 0;
@@ -380,7 +391,8 @@ section.review{
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
-    z-index: var(--z-overlay);
+    z-index: 1;
+    opacity: 0;
 }
   
 .flex{
@@ -391,22 +403,32 @@ section.review{
   
 
 /* swiper btn */
-.review .swiper-navBtn{
-    background-color: rgba(0, 0, 0, 0.1);
+
+.swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    font-size: 2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 12px;
+    border-radius: 50%;
+    cursor: pointer;
 }
-.review .swiper-button-next{
-    display: block;
-    right: 2rem;
-    transform: translateY(2rem);
+
+.swiper-button-next {
+    right: 20px;
 }
-.review .swiper-button-prev{
-    display: block;
-    left: 2rem;
-    transform: translateY(2rem);
+
+.swiper-button-prev {
+    left: 20px;
 }
-.review .swiper-navBtn:hover{
-    background-color: rgba(0, 0, 0, 0.2);
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
+
 
 
 @media screen and (max-width:860px) {
