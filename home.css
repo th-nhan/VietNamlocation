@@ -190,11 +190,29 @@ section .cards .card{
 }
 
 
+section .about{
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.portfolio .cards .card {
+    padding: 0 0 20px;
+}
+
+.portfolio .card img {
+    width: 100%;
+    padding-bottom: 10px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 7px;
+}
 
 
-
-
-
+.cards .card p {
+    padding: 0 15px;
+    margin-top: 5px;
+}
+  
 
 
 
