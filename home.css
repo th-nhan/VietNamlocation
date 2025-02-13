@@ -81,6 +81,26 @@ header a, footer a{
 header a:hover, footer a:hover {
     color: #ddd;
 }
+.all-links .more-navbar:hover .more{
+    display: block;
+}
+
+
+.all-links .more{
+    display: none;
+    position: absolute;
+    width: 180px;
+    background: #333;
+    top: 30px;
+    left: 30px;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.all-links .more a{
+    margin: 5px 0;
+}
 
 .homepage{
     height: 100vh;
@@ -294,6 +314,20 @@ section.about {
 }
 
 /* review */
+.container{
+    max-width: 1030px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 3rem;
+}  
+
+.flex{
+    display: flex;
+    align-items: center;
+    column-gap: 0.6rem;
+}
+
+
 
 section.review{
     margin: 0 auto;
@@ -353,21 +387,21 @@ section.review{
     padding: 0;
     z-index: 1;
 }
+
 .swiper-slider{
     /* position: relative;
     height: 100vh;
     width: 100%; */
-    display: flex !important; 
+    display: none ; 
     align-items: center;
     justify-content: center;
-    opacity: 1;
+    /* opacity: 1; */
     visibility: visible;
     flex: 0 0 100%;
     max-width: 100%;
 }
-
 .swiper-slider.active {
-    display: block;
+    display: flex;
 }
 
 
@@ -379,7 +413,8 @@ section.review{
     display: flex;
     transition-property: transform;
     box-sizing: content-box;
-
+    transition: transform 0.5s ease;
+    
     
 } 
 
@@ -395,14 +430,10 @@ section.review{
     opacity: 0;
 }
   
-.flex{
-    display: flex;
-    align-items: center;
-    column-gap: 0.6rem;
-}
   
 
 /* swiper btn */
+
 
 .swiper-button-next, .swiper-button-prev {
     position: absolute;
