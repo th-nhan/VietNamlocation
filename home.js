@@ -10,17 +10,17 @@ document.addEventListener("DOMContentLoaded", function () {
   let slides = document.querySelectorAll(".swiper-slider");
   let currentIndex = 0;
 
-  slides[currentIndex].style.display = "block";
+  // slides[currentIndex].style.display = "block";
   slides[currentIndex].classList.add("active");
 
   
   function showSlide(index) {
-    slides.forEach(slide => slide.style.display = "none"); // Ẩn tất cả slide
+    slides.forEach(slide => slide.style.display = "none"); 
 
     if (index < 0) {
-        currentIndex = slides.length - 1; // Quay về slide cuối cùng
+        currentIndex = slides.length - 1; 
     } else if (index >= slides.length) {
-        currentIndex = 0; // Quay về slide đầu tiên
+        currentIndex = 0; 
     } else {
         currentIndex = index;
     }

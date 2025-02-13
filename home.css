@@ -366,7 +366,7 @@ section.review{
     max-width: 100%;
 }
 
-.swiper-slider .active {
+.swiper-slider.active {
     display: block;
 }
 
