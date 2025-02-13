@@ -5,6 +5,13 @@ signOut.addEventListener("click", (e)=>{
     window.location.href = "login.html";
 });
 
+const signOutMB = document.querySelector(".signout-mobi");
+
+signOutMB.addEventListener("click", (e)=>{
+    e.preventDefault();
+    window.location.href = "login.html";
+});
+
 
 //chạy slide review
 let currentIndex = 0;

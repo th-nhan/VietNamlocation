@@ -50,6 +50,10 @@ header{
     flex: 2;
 }
 
+.navbar .all-links-mobi{
+    display: none;
+}
+
 .navbar .all-links li{
     position: relative;
     list-style: none;
@@ -467,18 +471,32 @@ section.review{
         position: fixed;
         left: -100%;
         width: 300px;
+        display: none;
+        height: 120vh;
+        top: 120px;
+        background: #333;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+
+    .navbar .all-links-mobi{
+        position: fixed;
+        left: -100%;
+        width: 300px;
         display: block;
         height: 120vh;
         top: 120px;
         background: #333;
         transition: left 0.3s ease;
+        z-index: 1000;
+
     }
 
-    .navbar #menu-toggler:checked~.all-links{
+    .navbar #menu-toggler:checked~.all-links-mobi{
         left: 0;
     }
 
-    .navbar .all-links li{
+    .navbar .all-links-mobi li{
         font-size: 1.2rem;
         padding: 20px 35px 20px 0px;
         text-align: center;
@@ -487,6 +505,9 @@ section.review{
     .navbar #menu-btn{
         display: block;
     }
+
+    
+    
 
     section > p{
         text-align: center;
@@ -519,6 +540,19 @@ section.review{
     footer a {
         height: 0;
     }
+
+    .section.review{
+        padding: 7rem 1rem 3rem;
+    }
+    .review .swiper{
+        padding-bottom: 6.5rem;
+    }
+    
+    
+    .review-quote{
+      padding: 0 6rem;
+    }
+
 }
 
 @media screen and (max-width: 560px) {
