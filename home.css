@@ -504,6 +504,7 @@ section.review{
 
     .navbar #menu-btn{
         display: block;
+        margin-right: 10px;
     }
 
     
@@ -550,8 +551,22 @@ section.review{
     
     
     .review-quote{
-      padding: 0 6rem;
+      padding: 0 ;
     }
+
+    .swiper-button-next, .swiper-button-prev {
+        position: absolute;
+        top: 18%;
+        transform: translateY(-50%);
+        z-index: 10;
+        font-size: 2rem;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px 12px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    
 
 }
 
