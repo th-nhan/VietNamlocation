@@ -28,12 +28,12 @@ function showSlide(index) {
 }
 
 document.getElementById('nextBtn').addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % totalSlides; // Tăng chỉ số và quay lại nếu vượt quá số slide
+    currentIndex = (currentIndex + 1) % totalSlides; 
     showSlide(currentIndex);
 });
 
 document.getElementById('prevBtn').addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // Giảm chỉ số và quay lại nếu dưới 0
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; 
     showSlide(currentIndex);
 });
 
