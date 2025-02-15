@@ -66,7 +66,12 @@ header{
     align-items: center;
     margin-left: 0;
 }
+footer .logo a img{
+    width: 45%;
+    height: auto;
 
+
+}
 .navbar .logo a img{
     width: 35%;
     height: auto;
@@ -464,7 +469,153 @@ section.review{
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* footer */
 
+footer{
+    position: relative;
+    width: 100%;
+    background: #333;
+}
+
+footer::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 225px;
+    height: 1px;
+    width: 100%;
+    background: #AFAFB6;
+}
+
+footer .footer-content{
+    max-width: 1250px;
+    margin: auto;
+    padding: 0 40px 40px 40px;
+}
+
+footer .footer-content .footer-content_top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+footer .footer-content .footer-content_top .logo{
+    position: relative;
+    left: -300px;
+}
+
+
+.footer-content .footer-content_top .media-icons{
+    display: flex;
+}
+
+.footer-content .footer-content_top .media-icons a{
+    height: 40px;
+    width: 40px;
+    margin: 0 8px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.footer-content .footer-content_top .media-icons a:nth-child(1){
+    background: #4267B2;
+}
+
+.footer-content .footer-content_top .media-icons a:nth-child(1):hover{
+    color: #4267B2;
+    background: #fff;
+}
+
+.footer-content .footer-content_top .media-icons a:nth-child(2){
+    background: #E1306C;
+}
+.footer-content .footer-content_top .media-icons a:nth-child(2):hover{
+    color: #E1306C;
+    background: #fff;
+}
+
+
+.footer-content .footer-content_top .media-icons a:nth-child(3){
+    background: #FF0000;
+}
+
+.footer-content .footer-content_top .media-icons a:nth-child(3):hover{
+    color: #FF0000;
+    background: #fff;
+}
+
+.footer-content .footer-content_top .media-icons a:nth-child(4){
+    background: #000;
+}
+.footer-content .footer-content_top .media-icons a:nth-child(4):hover{
+    background: #fff;
+    color: #000;
+}
+
+footer .footer-content .links-boxes{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .footer-content .links-boxes .box{
+    width: calc(100% / 5 - 10px);
+}       
+
+
+.footer-content .links-boxes .box .link_name{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.links-boxes .box .link_name::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 35px;
+    background: #fff;
+}
+
+.footer-content .links-boxes .box li{
+    margin: 6px 0;
+    list-style: none;
+}
+
+.footer-content .links-boxes .box li a{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.4s ease
+}
+
+.footer-content .links-boxes .box li a:hover{
+    opacity: 1;
+    text-decoration: underline;
+}
+
+
+.footer-content .links-boxes .box a i {
+    font-size: 30px;
+}
+
+
+.payment-element{
+    display: block;
+    
+}
 
 @media screen and (max-width:860px) {
     .navbar .all-links{
