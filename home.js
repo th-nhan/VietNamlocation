@@ -39,3 +39,8 @@ document.getElementById('prevBtn').addEventListener('click', () => {
 
 
 showSlide(currentIndex);
+
+// services
+document.getElementById('tour-services').addEventListener('click',() => {
+    window.location.href = 'tourservices.html';
+})
