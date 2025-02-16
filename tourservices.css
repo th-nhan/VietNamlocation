@@ -193,7 +193,39 @@ section > p{
 .cards .card p {
     padding: 0 15px;
     margin-top: 5px;
+    
 }
+
+.cards .card i{
+    margin: 10px 10px 2px 0;
+    font-size: 20px;
+}
+
+.cards .card span {
+    color: #999;
+    line-height: 12px;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.cards .card .fa-sort-down{
+    margin: 0 10px 8px 0;
+}
+
+.cards .card .fa-plane-departure{
+    color: rgb(39, 218, 238);
+}
+
+.cards .card .fa-tag{
+    color: rgb(255, 247, 29);
+}
+
+.cards .card .fa-calendar-days{
+    color: rgb(13, 241, 62);
+}
+
+
 
 section .cards{
     display: flex;
