@@ -245,6 +245,7 @@ section .cards .card{
     margin-bottom: 40px;
     width: calc(100% /2 - 30px);
     text-align: center;
+    position: relative;
 }
 
 
@@ -257,7 +258,86 @@ section .cards .card{
     object-fit: cover;
 }
 
+.item-saleoff{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 72px;
+    height: 70px;
+    background-color: rgba(255,216,64,0.9);
+    text-align: center;
+    border-top-right-radius: 2px;
+}
 
+.item-saleoff::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -14.5px;
+    border-width: 0 36.5px 15px;
+    border-style: solid;
+    color: rgba(255, 216, 64, 0.9);
+    border-color: transparent currentColor transparent currentColor;
+}
+
+.cards .card .item-saleoff .item-saleoff_percent{
+    color: #ee4d2d;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 0.9rem;
+    position: relative;
+    top: -5px;
+}
+
+.cards .card .item-saleoff .item-saleoff_label{
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    color: #fff;
+    position: relative;
+    top: -28px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.item-numberleft{
+    position: absolute;
+    top: 10px;
+    left: -4px;
+    
+    background-color: #ee4d2d;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.2rem;
+    padding-right: 6px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.item-numberleft::after{
+    content: "";
+    border-top: 5px solid #ee4d2d;
+    filter: brightness(60%);
+    border-left: 5px solid transparent;
+    position: absolute;
+    bottom: -4.5px;
+    left: 0px;
+}
+
+.cards .card .item-numberleft i{
+    margin: 10px 8px 2px 10px;
+    font-size: 1rem;
+    position: relative;
+    top: -2px;
+    color: #fff;
+}
+
+.cards .card .item-numberleft span{
+    color: #fff;
+    margin: 0;
+    font-size: 1rem;
+    position: relative;
+    top: -2px; 
+}
 
 @media screen and (max-width:860px) {
     .navbar .all-links{
