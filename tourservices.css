@@ -339,6 +339,58 @@ section .cards .card{
     top: -2px; 
 }
 
+.button-booking{
+    margin-top: 20px;
+    
+}
+
+.button-booking button{
+    position: relative;
+    height: 50px;
+    width: 160px;
+    margin: 0 35px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background: #111;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+.button-booking button:hover{
+    background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);
+    background-size: 400%;
+}
+
+.button-booking button::before{
+    content: '';
+    position: absolute;
+    background: inherit;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50px;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.button-booking button:hover::before{
+    opacity: 1;
+    z-index: -1;
+}
+.button-booking button:hover{
+    z-index: 1;
+    animation: glow 8s linear infinite;
+}
+
+
 @media screen and (max-width:860px) {
     .navbar .all-links{
         position: fixed;
@@ -402,3 +454,14 @@ section .cards .card{
 
 
 }
+
+
+@keyframes glow {
+    0%{
+      background-position: 0%;
+    }
+    100%{
+      background-position: 400%;
+    }
+  }
+
