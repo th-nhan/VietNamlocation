@@ -207,6 +207,11 @@ section > p{
     display: inline-flex;
     align-items: center;
     margin-top: 25px;
+    transition: color 0.3s ease;
+}
+
+.card .card_more:hover{
+    color: #000;
 }
 
 .cards .card .fa-sort-down{
