@@ -201,13 +201,14 @@ section > p{
     font-size: 20px;
 }
 
-.cards .card span {
+.cards .card a {
     color: #999;
     line-height: 12px;
     display: inline-flex;
     align-items: center;
     margin-top: 25px;
     transition: color 0.3s ease;
+    cursor: pointer;
 }
 
 .card .card_more:hover{
@@ -291,7 +292,7 @@ section .cards .card{
     font-size: 1.2rem;
     line-height: 0.9rem;
     position: relative;
-    top: -5px;
+    top: 23px;
 }
 
 .cards .card .item-saleoff .item-saleoff_label{
@@ -299,7 +300,7 @@ section .cards .card{
     line-height: 0.8rem;
     color: #fff;
     position: relative;
-    top: -28px;
+    top: 13px;
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -401,7 +402,7 @@ section .cards .card{
 /* hien thi more */
 
 .more-open{
-    display: flex;
+    display: flex !important;
 }
 
 .more-basic{
@@ -514,7 +515,7 @@ section .cards .card{
         width: 300px;
         display: block;
         height: 120vh;
-        top: 120px;
+        top: 100px;
         background: #333;
         transition: left 0.3s ease;
         z-index: 1000;
@@ -540,7 +541,7 @@ section .cards .card{
         text-align: center;
     }
     section .cards .card {
-        width: calc(100% / 2 - 15px);
+        width: calc(100%);
         margin-bottom: 30px;
       }
     .homepage .content h1 {

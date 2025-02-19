@@ -4,26 +4,41 @@ document.querySelector('.js-logo-backhome').addEventListener('click',(e)=>{
 })
 
 
-// const more_btn = document.querySelector('.more-card');
-// const more_tab = document.querySelector('.available-more');
-// const closeIcon = document.querySelector('.more-closeIcon');
 
-// more_btn.addEventListener('click',()=>{
-//     more_tab.classList.add('open');
-// })
+const moreBtns = document.querySelectorAll('.card_more');
 
-// closeIcon.addEventListener('click', () => {
-//     more_tab.classList.remove('open'); 
+const moreTabs = document.querySelectorAll('.more-basic');
+
+const closeIcons = document.querySelectorAll('.more-closeIcon');
+
+
+// moreBtn.addEventListener('click', (e) => {
+    
+//     e.preventDefault();
+//     moreTab.classList.add('more-open'); 
 // });
 
-const moreBtn = document.querySelector('.card_more');
-const moreTab = document.querySelector('.available-more');
-const closeIcon = document.querySelector('.more-closeIcon');
+// closeIcon.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     moreTab.classList.remove('more-open'); 
+// });
 
-moreBtn.addEventListener('click', () => {
-    moreTab.classList.add('open'); // Thêm class open
+
+moreBtns.forEach((btn, index) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+     
+      moreTabs.forEach(tab => tab.classList.remove('more-open'));
+      
+      moreTabs[index].classList.add('more-open');
+    });
 });
-
-closeIcon.addEventListener('click', () => {
-    moreTab.classList.remove('open'); // Xóa class open
+  
+  
+closeIcons.forEach((icon, index) => {
+icon.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    moreTabs[index].classList.remove('more-open');
+    });
 });
