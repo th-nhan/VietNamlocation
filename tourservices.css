@@ -406,15 +406,16 @@ section .cards .card{
 
 .more-basic{
     position: fixed;
-    top: 0;
+    top: 0px;
     bottom: 0;
     left: 0;
     right: 0;
     background-color: rgba(0,0,0,0.3);
     align-items: center;
     justify-content: center;
-    /* display: none; */
-    display: flex;
+    display: none;
+    /* display: flex; */
+    z-index: 9999;
 
 }
 
@@ -425,6 +426,11 @@ section .cards .card{
     min-height: 200px;
     position: relative;
     animation: modalFadeInease 0.3s;
+    height: 650px;
+    overflow-y: auto;
+    scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox */
+    -ms-overflow-style: none; /* Ẩn thanh cuộn trên IE/Edge */
+    border-radius: 5px
 }
 
 .more-closeIcon{
@@ -447,6 +453,48 @@ section .cards .card{
     color: #fff;
 }
 
+.more-body{
+    background: #fff;
+
+}
+
+.more-intro{
+    margin: 40px;
+    text-align: justify;
+}
+
+.more-intro h2{
+    text-align: center;
+}
+
+.more-intro span{
+    display: flex;
+    justify-content: center;
+    color: #666;
+
+}
+
+.more-intro_detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.tour-itinerary{
+    margin: 20px 0;
+}
+
+.tour-itinerary .tour-plan {
+    margin: 28px 0;
+}
+
+.more-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 0 60px 0;
+}
 @media screen and (max-width:860px) {
     .navbar .all-links{
         position: fixed;
