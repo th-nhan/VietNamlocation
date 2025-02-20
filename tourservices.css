@@ -445,13 +445,26 @@ section .cards .card{
 }
 
 .more-header{
-    background: url("https://tourismdanang.com/wp-content/uploads/2020/04/62553457_441495056671311_2106223215742287872_o.jpg") no-repeat center;
     height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 30px;
     color: #fff;
+}
+
+.more-img-1{
+    background: url("https://tourismdanang.com/wp-content/uploads/2020/04/62553457_441495056671311_2106223215742287872_o.jpg") no-repeat center;
+}
+
+.more-img-2{
+    background: url("https://lh4.googleusercontent.com/proxy/F7kq1zgFedHfpqgmHLL5UYUsP2yhzxzUt9ULdpnKRqJLsCZnDUJuDJNNiFCiCx8VjG6wJDgI5hlSGvG7oT3NJs1sS4zUFqeJHzc") no-repeat center;
+    
+    background-size: cover;
+}
+
+.more-img-3{
+
 }
 
 .more-body{
