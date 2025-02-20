@@ -42,3 +42,11 @@ icon.addEventListener('click', (e) => {
     moreTabs[index].classList.remove('more-open');
     });
 });
+
+const bookingBtns = document.querySelectorAll('.button-booking');
+
+bookingBtns.forEach((bookingBtn,index)=>{
+    bookingBtn.addEventListener('click',() =>{
+        window.location.href = "bookingform.html";
+    });
+});
