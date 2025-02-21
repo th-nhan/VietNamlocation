@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Form | VN Location</title>
+    <link rel="stylesheet" href="bookingform.css">
 </head>
 <body>
 
@@ -13,18 +14,105 @@
             <label for="fullname">Full Name</label>
             <input type="text" id="fullname" placeholder="Enter your full name">
         </div>
-        <div class="form-group fullname">
-            <label for="fullname">Full Name</label>
-            <input type="text" id="fullname" placeholder="Enter your full name">
+        <div class="form-group email">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
         </div>
-        <div class="form-group fullname">
-            <label for="fullname">Full Name</label>
-            <input type="text" id="fullname" placeholder="Enter your full name">
+        <div class="form-group passport">
+            <label for="passport"> ID/Passport Number (for international trips)</label>
+            <input type="text" id="passport" placeholder="Enter your ID/passport">
+        </div>
+        <div class="form-group date">
+            <label for="date">Birth Date</label>
+            <input type="date" id="date" placeholder="Select your date">
+        </div>
+        <div class="form-group gender">
+            <label for="gender">Gender</label>
+            <select id="gender">
+              <option value="" selected disabled>Select your gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="form-group destinations">
+            <label for="destinations " >Destinations</label>
+            <select id="destinations" onchange="showTourInfo()">
+              <option value="" selected disabled>Select your destinations</option>
+              <option value="HoiAn">Hoi An - Vietnam</option>
+              <option value="Thailand">BangKok, Ayuthaya,.. - Thailand</option>
+              <option value="Korea">Seoul ,Busan - Korea</option>
+            </select>
+
+        </div>
+        <div id="tourDetails" class="tour-info" >
+            <h3>Tour Details</h3>
+            <p><strong>Tour Name:</strong> <span id="tourName"></span></p>
+            <p>📅 <strong>Departure Date:</strong> <input type="date" id="departureDate" readonly></p>
+            <p>📍 <strong>Pick-up Location:</strong> 
+                <select id="pickUpLocation">
+                    <option value="airport">Airport</option>
+                    <option value="hotel">Hotel</option>
+                    <option value="agency">Travel Agency Office</option>
+                </select>
+            </p>
+            <p>⏳ <strong>Duration:</strong> <input type="text" id="duration" readonly></p>
+        </div>
+        
+        <div class="form-group numberOfTicket">
+            <label for="numberOfTicket">Number of tickets</label>
+            <input type="number" id="numberOfTicket" placeholder="Enter your number of tickets" min="1">
+        </div>
+
+        <div class="form-group children">
+            <label>Do you have children with you?</label> <br>
+            <input type="radio" id="children-yes" name="children" value="yes" onclick="toggleChildrenInput(true)">
+            <label for="children-yes">Yes</label>
+            <input type="radio" id="children-no" name="children" value="no" onclick="toggleChildrenInput(false)">
+            <label for="children-no">No</label>
+
+            <br>
+            <div id="childrenInput" style="display: none;">
+                <label for="numChildren">Số lượng trẻ em:</label>
+                <input type="number" id="numChildren" name="numChildren" min="1" placeholder="Nhập số lượng">
+            </div>
         </div>
 
     </form>
 
 
-    
+    <script>
+        function toggleChildrenInput(show) {
+            document.getElementById("childrenInput").style.display = show ? "block" : "none";
+        }
+    </script>
+    <script>
+        function showTourInfo() {
+            const destination = document.getElementById("destinations").value;
+            const tourDetails = document.getElementById("tourDetails");
+            const tourName = document.getElementById("tourName");
+            var departureDate = document.getElementById("departureDate");
+            var duration = document.getElementById("duration");
+
+
+            if (destination) {
+                tourDetails.style.display = "block";
+
+                // Định nghĩa tên tour theo điểm đến
+                var tours = {
+                    "HoiAn": { name: "Hoi An Ancient Town Tour", date: "2025-03-15", dura: "3 days - 2 nights" },
+                    "Thailand": { name: "Thailand Cultural Adventure", date: "2025-04-10", dura: "6 days - 5 nights" },
+                    "Korea": { name: "Korea Scenic Tour", date: "2025-04-10", dura: "6 days - 5 nights" }
+                };
+
+
+                tourName.textContent = tours[destination].name || "Tour Not Found";
+                departureDate.value = tours[destination].date;
+                duration.value = tours[destination].dura;
+            } else {
+                tourDetails.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
