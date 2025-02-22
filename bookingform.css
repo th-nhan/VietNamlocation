@@ -12,7 +12,7 @@ body {
   padding: 0 10px;
   min-height: 100vh;
   background: url(https://statics.vinpearl.com/canh-dep-viet-nam-11_1634999614.jpg) no-repeat center;
-  
+  background-size: cover;
 }
 
 
@@ -24,4 +24,42 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
+}
+
+form{
+    padding: 25px;
+    background: #fff;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 7px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+}
+
+form h2{
+    font-size: 27px;
+    text-align: center;
+    margin: 0 0 30px;
+}
+
+form .form-group{
+    margin-bottom: 15px;
+    position: relative;
+}
+
+form label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+form input,
+form select{
+    height: 45px;
+    padding: 10px;
+    width: 100%;
+    font-size: 15px;
+    outline: none;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #bfbfbf;
 }
