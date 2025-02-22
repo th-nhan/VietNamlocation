@@ -3,6 +3,19 @@ document.querySelector('.js-logo-backhome').addEventListener('click',(e)=>{
     window.location.href = "home.html";
 })
 
+const signOut = document.querySelector(".signout");
+
+signOut.addEventListener("click", (e)=>{
+    e.preventDefault();
+    window.location.href = "login.html";
+});
+
+const signOutMB = document.querySelector(".signout-mobi");
+
+signOutMB.addEventListener("click", (e)=>{
+    e.preventDefault();
+    window.location.href = "login.html";
+});
 
 
 const moreBtns = document.querySelectorAll('.card_more');

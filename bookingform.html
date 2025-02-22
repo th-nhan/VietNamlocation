@@ -74,8 +74,11 @@
             <br>
             <div id="childrenInput" style="display: none;">
                 <label for="numChildren">Số lượng trẻ em:</label>
-                <input type="number" id="numChildren" name="numChildren" min="1" placeholder="Nhập số lượng">
+                <input type="number" id="numChildren" name="numChildren" min="1" placeholder="Nhập số lượng" oninput="validateTickets()">
             </div>
+        </div>
+        <div class="form-group submit-btn">
+            <input type="submit" value="Submit">
         </div>
 
     </form>
@@ -83,7 +86,21 @@
 
     <script>
         function toggleChildrenInput(show) {
-            document.getElementById("childrenInput").style.display = show ? "block" : "none";
+            const childrenInput = document.getElementById("childrenInput");
+            childrenInput.style.display = show ? "block" : "none";
+
+            if (!show) {
+                document.getElementById("childrenCount").value = 0;
+            }
+        }
+        function validateTickets() {
+            const ticketCount = parseInt(document.getElementById("numberOfTicket").value) || 0;
+            const childrenCount = parseInt(document.getElementById("numChildren").value) || 0;
+
+            if (childrenCount > ticketCount) {
+                alert("❌ ERROR: The number of tickets must be greater than the number of children!");
+                document.getElementById("numChildren").value = Math.max(0, ticketCount - 1);
+            }
         }
     </script>
     <script>
