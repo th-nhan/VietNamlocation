@@ -11,8 +11,10 @@ body {
   justify-content: center;
   padding: 0 10px;
   min-height: 100vh;
-  background: url(https://statics.vinpearl.com/canh-dep-viet-nam-11_1634999614.jpg) no-repeat center;
+  background: url(https://images2.thanhnien.vn/528068263637045248/2023/8/18/img20230818104907-1692330738831385338779.jpg) repeat center;
   background-size: cover;
+  
+  
 }
 
 
@@ -28,22 +30,35 @@ body {
 
 form{
     padding: 25px;
-    background: #fff;
-    max-width: 500px;
+    /* background: #fff; */
+    background: rgba(0,0,0,0.3);
+    max-width: 700px;
     width: 100%;
     border-radius: 7px;
     box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+    color:#fff;
 }
 
 form h2{
-    font-size: 27px;
+    font-size: 32px;
     text-align: center;
     margin: 0 0 30px;
+    transition: color 0.5s ease, background 0.5s ease;
+
 }
+
+form h2:hover{
+    background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
 
 form .form-group{
     margin-bottom: 15px;
     position: relative;
+    color: #fff;
 }
 
 form label {
@@ -63,3 +78,80 @@ form select{
     border-radius: 3px;
     border: 1px solid #bfbfbf;
 }
+
+.children-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    color: #fff;
+}
+
+.children-group label {
+    font-size: 10px;
+    cursor: pointer;
+    
+    font-weight: 500;
+}
+
+
+.children-group input{
+    height: 20px;
+}
+.form-group.children label {
+    font-size: 18px;
+    
+}
+
+form input:focus,
+form select:focus {
+  border-color: #9a9a9a;
+}
+
+form input.error,
+form select.error {
+  border-color: #f91919;
+  background: #f9f0f1;
+}
+
+form small {
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+    color: #f91919;
+}
+
+.submit-btn {
+    margin-top: 30px;
+}
+.submit-btn input {
+    color: white;
+    border: none;
+    height: auto;
+    font-size: 16px;
+    padding: 13px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: center;
+    background: #1BB295;
+    transition: background 0.2s ;
+}
+
+.submit-btn input:hover{
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+}
+.submit-btn input:hover{
+    z-index: 1;
+    animation: glow 8s linear infinite;
+}
+
+@keyframes glow {
+    0%{
+      background-position: 0%;
+    }
+    100%{
+      background-position: 400%;
+    }
+}
+

@@ -66,11 +66,12 @@
 
         <div class="form-group children">
             <label>Do you have children with you?</label> <br>
-            <input type="radio" id="children-yes" name="children" value="yes" onclick="toggleChildrenInput(true)">
-            <label for="children-yes">Yes</label>
-            <input type="radio" id="children-no" name="children" value="no" onclick="toggleChildrenInput(false)">
-            <label for="children-no">No</label>
-
+            <div class="children-group">
+                <input type="radio" id="children-yes" name="children" value="yes" onclick="toggleChildrenInput(true)">
+                <label for="children-yes">Yes</label>
+                <input type="radio" id="children-no" name="children" value="no" onclick="toggleChildrenInput(false)">
+                <label for="children-no">No</label>    
+            </div>
             <br>
             <div id="childrenInput" style="display: none;">
                 <label for="numChildren">Số lượng trẻ em:</label>
