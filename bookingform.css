@@ -26,6 +26,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
+    color: #000;
 }
 
 form{
@@ -98,7 +99,7 @@ form select{
     height: 20px;
 }
 .form-group.children label {
-    font-size: 18px;
+    font-size: 15px;
     
 }
 
@@ -144,6 +145,29 @@ form small {
 .submit-btn input:hover{
     z-index: 1;
     animation: glow 8s linear infinite;
+}
+
+.check-policies{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: auto;
+    margin: 10px 0;
+}
+
+form .check-policies input{
+    height: 15px;
+    margin: 0;
+    
+  
+}
+
+.check-policies label {
+    white-space: nowrap;
+}
+
+.check-policies a{
+    color: #1BB295;
 }
 
 @keyframes glow {

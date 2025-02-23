@@ -74,13 +74,20 @@
             </div>
             <br>
             <div id="childrenInput" style="display: none;">
-                <label for="numChildren">Số lượng trẻ em:</label>
-                <input type="number" id="numChildren" name="numChildren" min="1" placeholder="Nhập số lượng" oninput="validateTickets()">
+                <label for="numChildren">Number of children:</label>
+                <input type="number" id="numChildren" name="numChildren" min="1" placeholder="Enter a number" oninput="validateTickets()">
             </div>
         </div>
+        <div class="check-policies">
+            <input type="checkbox">
+            <label for="">Agree to <a href="">policies & conditions</a></label>
+        </div>
+
         <div class="form-group submit-btn">
             <input type="submit" value="Submit">
         </div>
+
+
 
     </form>
 
@@ -104,6 +111,7 @@
             }
         }
     </script>
+
     <script>
         function showTourInfo() {
             const destination = document.getElementById("destinations").value;
@@ -131,6 +139,113 @@
                 tourDetails.style.display = "none";
             }
         }
+    </script>
+    
+    <script>
+        const form = document.querySelector("form");
+
+        // Function to display error messages
+        const showError = (field, errorText) => {
+            field.classList.add("error");
+            const errorElement = document.createElement("small");
+            errorElement.classList.add("error-text");
+            errorElement.innerText = errorText;
+            field.closest(".form-group").appendChild(errorElement);
+        }
+
+        // Function to handle form submission
+        const handleFormData = (e) => {
+            e.preventDefault();
+            
+            // Retrieving input elements
+            const fullnameInput = document.getElementById("fullname");
+            const emailInput = document.getElementById("email");
+            const passportInput = document.getElementById("passport");
+            const dateInput = document.getElementById("date");
+            const genderInput = document.getElementById("gender");
+            const destinationsInput = document.getElementById("destinations");
+            const ticketInput = document.getElementById("numberOfTicket");
+            const childrenYes = document.getElementById("children-yes");
+            const childrenNo = document.getElementById("children-no");
+            const numChildrenInput = document.getElementById("numChildren");
+
+            // Getting trimmed values
+            const fullname = fullnameInput.value.trim();
+            const email = emailInput.value.trim();
+            const passport = passportInput.value.trim();
+            const date = dateInput.value;
+            const gender = genderInput.value;
+            const destinations = destinationsInput.value;
+            const tickets = ticketInput.value.trim();
+            const hasChildren = childrenYes.checked || childrenNo.checked;
+            const numChildren = numChildrenInput.value.trim();
+
+            // Regular expression pattern for email validation
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            // Clear previous errors
+            document.querySelectorAll(".form-group .error").forEach(field => field.classList.remove("error"));
+            document.querySelectorAll(".error-text").forEach(errorText => errorText.remove());
+
+            // Validation checks
+            if (!fullname) showError(fullnameInput, "Enter your full name");
+            if (!emailPattern.test(email)) showError(emailInput, "Enter a valid email address");
+            if (!passport) showError(passportInput, "Enter your ID/passport");
+            if (!date) showError(dateInput, "Select your birth date");
+            if (!gender) showError(genderInput, "Select your gender");
+            if (!destinations) showError(destinationsInput, "Select your destinations");
+            if (!tickets) showError(ticketInput, "Enter number of tickets");
+            
+            // Children validation
+            if (!hasChildren) {
+                showError(document.querySelector(".children-group"), "Please select children option");
+            }
+            if (childrenYes.checked && !numChildren) {
+                showError(numChildrenInput, "Enter number of children");
+            }
+            if (childrenYes.checked && numChildren > tickets) {
+                showError(numChildrenInput, "Children count cannot exceed tickets");
+            }
+
+            // Check remaining errors
+            const errorInputs = document.querySelectorAll(".form-group .error");
+            if (errorInputs.length > 0) return;
+
+            // Submit form if valid
+            form.submit();
+        }
+
+        // Event listeners
+        form.addEventListener("submit", handleFormData);
+
+        // Children toggle handler
+        function toggleChildrenInput(show) {
+            const childrenInput = document.getElementById("childrenInput");
+            childrenInput.style.display = show ? "block" : "none";
+            if (!show) document.getElementById("numChildren").value = "";
+        }
+
+        // Tickets validation
+        function validateTickets() {
+            const numChildren = document.getElementById("numChildren");
+            const tickets = document.getElementById("numberOfTicket").value;
+            if (numChildren.value > tickets) {
+                showError(numChildren, "Children count cannot exceed tickets");
+                numChildren.value = "";
+            }
+        }
+
+        // Real-time input validation
+        document.querySelectorAll("input, select").forEach(element => {
+            element.addEventListener("input", () => {
+                if (element.id !== "numChildren") {
+                    element.classList.remove("error");
+                    const errorText = element.closest(".form-group").querySelector(".error-text");
+                    if (errorText) errorText.remove();
+                }
+            });
+        });
+
     </script>
 </body>
 </html>
