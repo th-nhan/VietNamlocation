@@ -78,8 +78,8 @@
                 <input type="number" id="numChildren" name="numChildren" min="1" placeholder="Enter a number" oninput="validateTickets()">
             </div>
         </div>
-        <div class="check-policies">
-            <input type="checkbox">
+        <div class="check-policies form-group">
+            <input type="checkbox" id="policyCheck">
             <label for="">Agree to <a href="">policies & conditions</a></label>
         </div>
 
@@ -168,6 +168,7 @@
             const childrenYes = document.getElementById("children-yes");
             const childrenNo = document.getElementById("children-no");
             const numChildrenInput = document.getElementById("numChildren");
+            const policyCheckInput = document.getElementById("policyCheck");
 
             // Getting trimmed values
             const fullname = fullnameInput.value.trim();
@@ -179,6 +180,7 @@
             const tickets = ticketInput.value.trim();
             const hasChildren = childrenYes.checked || childrenNo.checked;
             const numChildren = numChildrenInput.value.trim();
+            const policyAccepted = policyCheckInput.checked;
 
             // Regular expression pattern for email validation
             const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
@@ -205,6 +207,9 @@
             }
             if (childrenYes.checked && numChildren > tickets) {
                 showError(numChildrenInput, "Children count cannot exceed tickets");
+            }
+            if (!policyAccepted) {
+                showError(policyCheckInput, "You must agree to the policies and conditions");
             }
 
             // Check remaining errors
@@ -244,6 +249,13 @@
                     if (errorText) errorText.remove();
                 }
             });
+        });
+
+        document.getElementById("policyCheck").addEventListener("change", function() {
+            this.classList.remove("error");
+            const container = this.closest(".check-policies");
+            const errorText = container.querySelector(".error-text");
+            if (errorText) errorText.remove();
         });
 
     </script>
