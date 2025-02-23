@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | VN Location</title>
+    <link rel="icon" href="photo/logo.png">
+</head>
+<body>
+    <p>Chào bạn, <span id="fullname"></span>!</p>
+    <p>Email: <span id="email"></span></p>
+    <p>Ngày sinh: <span id="date"></span></p>
+    <p>Giới tính: <span id="gender"></span></p>
+    <p>Điểm đến: <span id="destinations"></span></p>
+    <p>Số vé: <span id="numberOfTicket"></span></p>
+    <p>Trẻ em: <span id="children"></span></p>
+    <p>Số lượng trẻ em: <span id="numChildren"></span></p>
+
+    <script>
+         function getParam(name) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(name) ? decodeURIComponent(params.get(name).replace(/\+/g, ' ')) : "Không có dữ liệu";
+        }
+
+        document.getElementById('fullname').textContent = getParam('fullname');
+        document.getElementById('email').textContent = getParam('email');
+        document.getElementById('date').textContent = getParam('date');
+        document.getElementById('gender').textContent = getParam('gender');
+        document.getElementById('destinations').textContent = getParam('destinations');
+        document.getElementById('numberOfTicket').textContent = getParam('numberOfTicket');
+        document.getElementById('children').textContent = getParam('children');
+        document.getElementById('numChildren').textContent = getParam('numChildren');
+    </script>
+</body>
+</html>

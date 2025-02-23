@@ -8,27 +8,27 @@
 </head>
 <body>
 
-    <form action="tourservices.html"  method="GET">
+    <form action="payment.html"  method="GET">
         <h2>Booking Form</h2>
         <div class="form-group fullname">
             <label for="fullname">Full Name</label>
-            <input type="text" id="fullname" placeholder="Enter your full name">
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
         </div>
         <div class="form-group email">
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Enter your email">
+            <input type="email" name="email" id="email" placeholder="Enter your email">
         </div>
         <div class="form-group passport">
             <label for="passport"> ID/Passport Number (for international trips)</label>
-            <input type="text" id="passport" placeholder="Enter your ID/passport">
+            <input type="text"  name="passport" id="passport" placeholder="Enter your ID/passport">
         </div>
         <div class="form-group date">
             <label for="date">Birth Date</label>
-            <input type="date" id="date" placeholder="Select your date">
+            <input type="date" name="date"  id="date" placeholder="Select your date">
         </div>
         <div class="form-group gender">
             <label for="gender">Gender</label>
-            <select id="gender">
+            <select id="gender" name="gender">
               <option value="" selected disabled>Select your gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
@@ -37,7 +37,7 @@
         </div>
         <div class="form-group destinations">
             <label for="destinations " >Destinations</label>
-            <select id="destinations" onchange="showTourInfo()">
+            <select id="destinations" name="destinations" onchange="showTourInfo()">
               <option value="" selected disabled>Select your destinations</option>
               <option value="HoiAn">Hoi An - Vietnam</option>
               <option value="Thailand">BangKok, Ayuthaya,.. - Thailand</option>
@@ -61,7 +61,7 @@
         
         <div class="form-group numberOfTicket">
             <label for="numberOfTicket">Number of tickets</label>
-            <input type="number" id="numberOfTicket" placeholder="Enter your number of tickets" min="1">
+            <input type="number" name="numberOfTicket" id="numberOfTicket" placeholder="Enter your number of tickets" min="1">
         </div>
 
         <div class="form-group children">
