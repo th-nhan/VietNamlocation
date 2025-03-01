@@ -609,56 +609,209 @@ section .cards .card{
     text-decoration: underline;
     text-underline-offset: 0.5rem;
     transition: all 0.5s;
-  }
+}
   
-  .bookingBtn button::before, .bookingBtn button::after {
+.bookingBtn button::before, .bookingBtn button::after {
     content: '';
     position: absolute;
     border-radius: 50%;
     z-index: 10;
     transition: all 0.5s;
-  }
+}
   
-  .bookingBtn button::before {
+.bookingBtn button::before {
     width: 3rem;
     height: 3rem;
     background-color: #38bdf8;
     right: 0.25rem;
     top: 0.25rem;
     filter: blur(8px);
-  }
+}
   
-  .bookingBtn button::after {
+.bookingBtn button::after {
     width: 5rem;
     height: 5rem;
     background-color: #0891b2;
     right: 2rem;
     top: 0.75rem;
     filter: blur(12px);
-  }
+}
   
-  .bookingBtn button:hover {
+.bookingBtn button:hover {
     background-color: #7dd3fc;
     text-decoration-thickness: 2px;
     text-underline-offset: 0.25rem;
     color: #075985;
     border-color: #7dd3fc;
-  }
+}
   
-  .bookingBtn button:hover::before {
+.bookingBtn button:hover::before {
     top: 2rem;
     right: 4rem;
     filter: blur(0);
-  }
+}
   
-  .bookingBtn button:hover::after {
+.bookingBtn button:hover::after {
     transform: scale(1.5);
     right: -0.5rem;
     filter: blur(0);
-  }
+}
 
 
 
+
+
+
+
+
+/* review */
+
+.container{
+    max-width: 1030px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 3rem;
+}  
+
+.flex{
+    display: flex;
+    align-items: center;
+    column-gap: 0.6rem;
+}
+
+
+
+section.review{
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 0 50px 0;
+}
+.review .section-subtitle{
+    text-align: center;
+}
+.review .section-title,
+.review .section-description{
+    color: #333;
+    text-align: center;
+}
+
+
+.testi-content{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    row-gap: 2rem;
+    flex-direction: column;
+}  
+
+.testi-content i{
+    font-weight: 700;
+    color: #333;
+    font-size: 38px;
+}
+
+.review-img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: 35px 0 10px;
+}
+.review-quote{
+    padding: 0 15rem;
+    text-align: center;
+}
+.quote-icon{
+    font-size: 3rem;
+}
+.testi-personDetails{
+    flex-direction: column;
+}
+.testi-personDetails .name{
+    font-size: 1.8rem;
+    
+}  
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+.swiper-slider{
+    /* position: relative;
+    height: 100vh;
+    width: 100%; */
+    display: none ; 
+    align-items: center;
+    justify-content: center;
+    /* opacity: 1; */
+    visibility: visible;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.swiper-slider.active {
+    display: flex;
+}
+
+
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+    transition: transform 0.5s ease;
+    
+    
+} 
+
+.swiper-slider::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    opacity: 0;
+}
+  
+  
+
+/* swiper btn */
+
+
+.swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    font-size: 2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.swiper-button-next {
+    right: 20px;
+}
+
+.swiper-button-prev {
+    left: 20px;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
 
 
 
