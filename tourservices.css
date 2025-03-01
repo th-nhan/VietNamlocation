@@ -647,7 +647,9 @@ section .cards .card{
         padding: 9px 20px;
     }
 
-
+    .tab-pane{
+        margin: 0 20px;
+    }
 }
 
 
