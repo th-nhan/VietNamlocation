@@ -511,7 +511,7 @@ section .cards .card{
 }
 /* Tabs booking tuors */
 .bookingTour{
-    
+    padding: 150px 0 0 0;
     
     
 }
@@ -567,13 +567,14 @@ section .cards .card{
     opacity: 1;
 }
 .tab-content {
-    padding: 28px 0;
+    padding: 20px 420px 100px 420px;
 }
 .tab-pane {
     color: #333;
     display: none;
     text-align: justify;
-    margin: 10px 420px;
+    
+   
 }
 .tab-pane.active {
     display: block;
@@ -584,7 +585,86 @@ section .cards .card{
     font-size: 24px;
     margin-bottom: 8px;
 }
+
+.bookingBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+}
   
+.bookingBtn button {
+    position: relative;
+    height: 4rem;
+    width: 16rem;
+    border: 1px solid transparent;
+    text-align: left;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: #0369a1;
+    color: #f8fafc;
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+    transition: all 0.5s;
+  }
+  
+  .bookingBtn button::before, .bookingBtn button::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    z-index: 10;
+    transition: all 0.5s;
+  }
+  
+  .bookingBtn button::before {
+    width: 3rem;
+    height: 3rem;
+    background-color: #38bdf8;
+    right: 0.25rem;
+    top: 0.25rem;
+    filter: blur(8px);
+  }
+  
+  .bookingBtn button::after {
+    width: 5rem;
+    height: 5rem;
+    background-color: #0891b2;
+    right: 2rem;
+    top: 0.75rem;
+    filter: blur(12px);
+  }
+  
+  .bookingBtn button:hover {
+    background-color: #7dd3fc;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25rem;
+    color: #075985;
+    border-color: #7dd3fc;
+  }
+  
+  .bookingBtn button:hover::before {
+    top: 2rem;
+    right: 4rem;
+    filter: blur(0);
+  }
+  
+  .bookingBtn button:hover::after {
+    transform: scale(1.5);
+    right: -0.5rem;
+    filter: blur(0);
+  }
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width:860px) {
     .navbar .all-links{
@@ -650,6 +730,11 @@ section .cards .card{
     .tab-pane{
         margin: 0 20px;
     }
+
+    .tab-content {
+        padding: 15px 30px 50px 30px;
+    }
+    
 }
 
 
