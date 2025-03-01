@@ -530,7 +530,7 @@ section .cards .card{
     width: 0;
     height: 6px;
     border-radius: 15px;
-    background-color: #a2f0f5;
+    background-color: rgb(12, 187, 207);
     transition: all 0.2s ease;
 }
 
@@ -544,7 +544,7 @@ section .cards .card{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom: 5px solid transparent;
-    opacity: 0.6;
+    opacity: 0.5;
     cursor: pointer;
     transition: all .5s ease;
 
@@ -572,10 +572,12 @@ section .cards .card{
 .tab-pane {
     color: #333;
     display: none;
+    text-align: justify;
+    margin: 10px 420px;
 }
 .tab-pane.active {
     display: block;
-    padding: 10px 60px;
+    
 
 }
 .tab-pane h2 {
