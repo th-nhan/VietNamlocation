@@ -685,6 +685,7 @@ section.review{
     margin: 0 auto;
     max-width: 1200px;
     padding: 0 0 50px 0;
+
 }
 .review .section-subtitle{
     text-align: center;
@@ -812,6 +813,164 @@ section.review{
 .swiper-button-next:hover, .swiper-button-prev:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+/* feedback */
+.feedback{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+.fb-container{
+    display: flex;
+    gap: 160px;
+    z-index: 1;
+    margin-top: 80px;
+}
+
+.fb-card{
+    position: relative;
+    width: 290px;
+    height: 354px;
+    background: url('https://image.baophapluat.vn/w840/Uploaded/2025/gfszlyrgtpe/2023_05_18/du-lich-viet-nam-9276.jpg') center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 12px;
+    gap: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    
+}
+
+.fb-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -5px;
+    margin: auto;
+    width: 300px;
+    height: 364px;
+    border-radius: 10px;
+    background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+    z-index: -10;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+}
+
+
+.fb-card::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+    transform: translate3d(0, 0, 0) scale(0.95);
+    filter: blur(20px);
+}
+
+
+.heading {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.fb-card p:not(.heading)
+{
+    font-size: 14px;
+}
+
+.fb-card p:last-child{
+    color: #00dbde;
+    font-weight: 600;
+}
+
+.fb-card:hover::after{
+    filter: blur(30px);
+}
+
+.fb-card:hover::before {
+    transform: rotate(-90deg) scaleX(1.23) scaleY(0.83);
+}
+
+
+.fb-content{
+    background-color: #fff;
+    border:1x solid #cbd5e1;
+    border-radius: 10px;
+    padding: 20px;
+    width: 320px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedback-title {
+    color: #64748b;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feedback-textarea {
+    width: 100%;
+    height: 180px;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    resize: none;
+    font-size: 14px;
+    color: #334155;
+    background-color: #f1f5f9;
+    transition: border 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+.feedback-textarea:focus {
+    border-color: #475569;
+}
+
+.feedback-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.feedback-button {
+    border: 1px solid #cbd5e1;
+    background: #f1f5f9;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.feedback-button:hover {
+    border-color: #475569;
+    background: #94a3b8;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
