@@ -1186,6 +1186,30 @@ footer .footer-content .links-boxes .box{
         font-size: 17px;
         padding: 9px 20px;
     }
+    .section.review{
+        padding: 7rem 1rem 3rem;
+    }
+    .review .swiper{
+        padding-bottom: 6.5rem;
+    }
+    
+    
+    .review-quote{
+      padding: 0 ;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        position: absolute;
+        top: 18%;
+        transform: translateY(-50%);
+        z-index: 10;
+        font-size: 2rem;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px 12px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
 
     .tab-pane{
         margin: 0 20px;
@@ -1194,30 +1218,125 @@ footer .footer-content .links-boxes .box{
     .tab-content {
         padding: 15px 30px 50px 30px;
     }
+
+    .feedback{
+        
+        margin-bottom: 300px;
+    }
     .fb-container{
         flex-direction: column;
         align-items: center;
-        margin-bottom: 500px;
+        
+        
+    }
+    footer {
+        padding: 30px 0 20px;
+        background: #333;
     }
 
-    footer a {
-        height: 0;
-    }
-    .footer-content .footer-content_top .logo {
-        font-size: 26px;
+    footer::before {
+        display: none; /* Ẩn đường kẻ ngang */
     }
 
-    .footer-content .footer-content_top .media-icons a{
-        height: 35px;
-        width:  35px;
+    footer .footer-content {
+        padding: 0 15px;
+    }
+
+    /* Phần logo và social icons */
+    footer .footer-content .footer-content_top {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 30px;
+    }
+
+    footer .footer-content .footer-content_top .logo {
+        left: 0;
+        margin: 0;
+        display: none;
+    }
+
+    .logo img {
+        width: 180px;
+    }
+
+    .footer-content .footer-content_top .media-icons {
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .footer-content .footer-content_top .media-icons a {
+        width: 38px;
+        height: 38px;
+        line-height: 40px;
+        font-size: 18px;
+        margin: 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Phần danh mục links */
+    footer .footer-content .links-boxes {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px 0;
+    }
+
+    .links-boxes .box {
+        width: 100% !important;
+        padding: 0 10px;
+    }
+
+    .link_name {
+        font-size: 16px;
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+    }
+
+    .links-boxes .box .link_name::before {
+        width: 40px;
+        bottom: -5px;
+        background: #fff;
+    }
+
+    .footer-content .links-boxes .box li {
+        margin: 10px 0;
+    }
+
+    .footer-content .links-boxes .box li a {
         font-size: 14px;
-        line-height: 35px;
+        opacity: 0.9;
+        display: inline-block;
+        padding: 3px 0;
     }
 
-    footer .footer-content .links-boxes .box{
-        width: calc(100%/3-10px);
+    /* Phần payment */
+    .payment-element {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        max-width: 280px;
+        margin: 20px auto 0;
+        padding: 15px 0;
     }
 
+    .payment-element a {
+        background: rgba(255,255,255,0.1);
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+        transition: transform 0.2s;
+    }
+
+    .payment-element a i {
+        font-size: 26px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .payment-element a:hover {
+        transform: scale(1.05);
+    }
+        
 
 }
 
