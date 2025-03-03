@@ -139,3 +139,82 @@ showSlide(currentIndex);
 document.getElementById('tour-services').addEventListener('click',() => {
     window.location.href = 'tourservices.html';
 })
+
+// toast msg
+function toast({
+    title ='',
+    message = '',
+    type = 'info',
+    duration = 3000
+}) {
+    const main = document.getElementById('toast');
+    if(main) {
+        const toast = document.createElement('div');
+        //auto remove
+        const autoRemove = setTimeout(function() {
+            main.removeChild(toast);
+        },duration + 1000);
+
+        //remove when clicked
+        toast.onclick = function(e) {
+            if(e.target.closest('.toast__close')) {
+                main.removeChild(toast);
+                clearTimeout(autoRemove)
+            }
+        }
+        const icons = {
+            info: 'ti-info-alt',
+            success: 'ti-check',
+            warning: 'ti-help-alt',
+            error: 'ti-face-sad',
+
+        }
+        const icon = icons[type];
+        const delay = (duration / 1000).toFixed(2);
+
+        toast.classList.add('toast',`toast--${type}`);
+        toast.style.animation = `slideInLeft ease .3s, fadeOut linear 1s 3s forwards`
+        toast.innerHTML = `
+         <div class="toast__icon">
+            <i class="${icon}"></i>
+        </div>
+        <div class="toast__body">
+            <h3 class="toast__title">${title}</h3>
+            <p class="toast__msg">${message}</p>
+        </div>
+        <div class="toast__close">
+            <i class="ti-close"></i>
+        </div>
+        `;
+        main.appendChild(toast);
+    }
+}
+function showInfoToast () {
+    toast ({
+    title: 'Succees',
+    message: 'You have successfully sent feedback',
+    type: 'success',
+    duration: 5000
+    });
+}
+
+function showWarningToast () {
+    toast ({
+    title: 'Warning',
+    message: 'Please enter your feedback before submitting!',
+    type: 'warning',
+    duration: 5000
+    });
+}
+
+
+function validateFeedback() {
+    let feedbackTextarea = document.getElementById("feedbackText");
+    let feedback = document.getElementById("feedbackText").value.trim();
+    if (feedback === "") {
+        showWarningToast ()
+        return;
+    }
+    showInfoToast();
+    feedbackTextarea.value = ""; 
+}

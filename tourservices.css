@@ -1118,10 +1118,84 @@ footer .footer-content .links-boxes .box{
 
 
 
+#toast {
+    position: fixed;
+    /* top: 32px; */
+    bottom: 32px;
+    right: 32px;
+    z-index: 9;
+}
+.toast {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px 0px;
+    border-radius: 2px;
+    min-width: 400px;
+    max-width: 450px;
+    border-left: 4px solid;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+    transition: all linear .3s;
+}
 
 
+.toast + .toast {
+    margin-top: 24px;
+}
+.toast__icon {
+    font-size: 24px;
+}
+.toast__close,
+.toast__icon {
+    padding: 0 16px;
+}
+
+.toast__body {
+    flex-grow: 1;
+}
+
+.toast__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.toast__msg {
+    font-size: 14px;
+    color: #888;
+    margin-top: 6px;
+    line-height: 1.5;
+}
+
+.toast__close {
+    font-size: 20px;
+    color: rgba(0,0,0,0.3);
+    cursor: pointer;
+}
 
 
+.toast--info {
+    border-color: #2f86eb;
+}
+.toast--info .toast__icon{
+    color: #2f86eb;
+}
+
+.toast--success {
+    border-color: #47d864;
+}
+
+.toast--success .toast__icon{
+    color: #47d864;
+}
+
+
+.toast--warning {
+    border-color: #ffc021;
+}
+.toast--warning .toast__icon{
+    color: #ffc021;
+}
 
 
 
@@ -1358,5 +1432,21 @@ footer .footer-content .links-boxes .box{
     to {
         opacity: 1;
         transform:  translateY(0px);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeOut {
+    to{
+        opacity: 0;
     }
 }
