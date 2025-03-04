@@ -39,14 +39,17 @@
             </div>
             <div class="form-content">
                 <h2>ĐĂNG NHẬP</h2>
-                <form action="#">
+                <form action="#" id="form-1">
                     <div class="input-field">
-                        <input type="text" required>
-                        <label>Nhập email</label>
+                        <input id="email" name="email" type="text" required class="form-control">
+                        <label for="email">Nhập email</label>
+                        <span class="form-message"></span>
                     </div>
                     <div class="input-field">
-                        <input type="password" required>
-                        <label>Mật khẩu</label>
+                        <input id="password" name="password" type="password" required class="form-control">
+                        <label for="password">Mật khẩu</label>
+                        <span class="form-message"></span>
+
                     </div>
                     <a href="#" class="forgot-pass-link">Quên mật khẩu</a>
                     <button type="submit" class="submit-login">Đăng nhập</button>
@@ -65,7 +68,11 @@
             </div>
             <div class="form-content">
                 <h2>ĐĂNG KÍ</h2>
-                <form action="#">
+                <form action="#" id="form-2">
+                    <div class="input-field">
+                        <input type="text" required>
+                        <label>Nhập họ tên</label>
+                    </div>
                     <div class="input-field">
                         <input type="text" required>
                         <label>Nhập email</label>
@@ -74,6 +81,11 @@
                         <input type="password" required>
                         <label>Tạo mật khẩu</label>
                     </div>
+                    <div class="input-field">
+                        <input type="password" required>
+                        <label>Nhập lại mật khẩu</label>
+                    </div>
+
                     <div class="policy-text">
                         <input type="checkbox" id="policy">
                         <label for="policy">
@@ -91,6 +103,8 @@
         </div>
         
     </div>
+    <script src="validator.js"></script>
+
     <script src="login.js"></script>
 </body>
 </html>

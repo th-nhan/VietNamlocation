@@ -106,3 +106,12 @@ signupSM.addEventListener("click",()=>{
     hidePopupBtn.click();
     signUpSuccess();
 })
+
+
+validator({
+    form: '#form-1',
+    rules: [
+        validator.isRequired('#password'),
+        validator.isEmail('#email')
+    ]
+});
