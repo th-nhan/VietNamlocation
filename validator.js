@@ -57,7 +57,8 @@ function validator(options) {
                 if(typeof options.onsubmit === 'function'){
                     var enableInputs = formElement.querySelectorAll('[name]:not([disable])');
                     var formValue = Array.from(enableInputs).reduce(function(values,input){
-                        return (values[input.name] = input.value) && values;
+                        values[input.name] = input.value;
+                        return  values;
                     },{});
                     options.onsubmit(formValue)
                 }else{   
