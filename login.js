@@ -94,24 +94,43 @@ function signUpSuccess(){
 }
 
 
-const loginSM = document.querySelector(".submit-login");
-const signupSM = document.querySelector(".submit-signup");
+// const loginSM = document.querySelector(".submit-login");
+// const signupSM = document.querySelector(".submit-signup");
 
-loginSM.addEventListener("click",()=>{
-    window.location.href = "home.html"
-});
+// loginSM.addEventListener("click",(event)=>{
+//     event.preventDefault()
+//     window.location.href = "home.html"
+// });
 
-signupSM.addEventListener("click",()=>{
+// signupSM.addEventListener("click",()=>{
 
-    hidePopupBtn.click();
-    signUpSuccess();
-})
+//     hidePopupBtn.click();
+//     signUpSuccess();
+// })
 
 
 validator({
     form: '#form-1',
+    errorSelector: '.form-message',
     rules: [
-        validator.isRequired('#password'),
+        validator.minLength('#password',4),
         validator.isEmail('#email')
+    ]
+});
+
+
+validator({
+    form: '#form-2',
+    errorSelector: '.form-message',
+    rules: [
+        validator.minLength('#password',4),
+        validator.isEmail('#email'),
+        validator.isRequired('#email'),
+        validator.isRequired('#re-password'),
+
+        validator.isRequired('#name'),
+        validator.isConfirmed('#re-password',function(){
+            return document.querySelector('#form-2 #password').value;
+        },'Mật khẩu không trùng khớp')
     ]
 });
