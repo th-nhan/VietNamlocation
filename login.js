@@ -115,7 +115,11 @@ validator({
     rules: [
         validator.minLength('#password',4),
         validator.isEmail('#email')
-    ]
+    ],
+    onsubmit: function(data) {
+        console.log(data);
+        window.location.href = "home.html";
+    }
 });
 
 

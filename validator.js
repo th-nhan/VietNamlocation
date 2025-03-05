@@ -26,7 +26,7 @@ function validator(options) {
             inputElement.parentElement.classList.remove('invalid');
 
         }
-
+        return !errorMessage;
     }
 
 
@@ -40,11 +40,30 @@ function validator(options) {
         formElement.onsubmit = function(e) {
             e.preventDefault();
 
+            var isFormValid = true;
+
             //Lặp qua từng rules và validate
             options.rules.forEach(function(rule){
                 var inputElement = formElement.querySelector(rule.selector);
-                validate(inputElement, rule);
-            })
+                var isValid = validate(inputElement, rule);
+                if(!isValid) {
+                    isFormValid = false;
+                }
+            });
+
+            if(isFormValid)
+            {
+                //Trg hop submit
+                if(typeof options.onsubmit === 'function'){
+                    var enableInputs = formElement.querySelectorAll('[name]:not([disable])');
+                    var formValue = Array.from(enableInputs).reduce(function(values,input){
+                        return (values[input.name] = input.value) && values;
+                    },{});
+                    options.onsubmit(formValue)
+                }else{   
+                    formElement.submit();
+                }
+            }
         }
 
 
