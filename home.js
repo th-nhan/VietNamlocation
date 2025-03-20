@@ -45,6 +45,6 @@ document.getElementById('tour-services').addEventListener('click',() => {
     window.location.href = 'tourservices.html';
 })
 
-document.getElementById('customer-services').addEventListener('click',()=>{
-    window.location.href = 'chatbot.html';
-})
+document.getElementById('customer-services').addEventListener('click', () => {
+    window.open('/dist/index.html', '_blank');
+});
