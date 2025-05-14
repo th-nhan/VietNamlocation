@@ -48,3 +48,7 @@ document.getElementById('tour-services').addEventListener('click',() => {
 document.getElementById('customer-services').addEventListener('click', () => {
     window.open('/dist/index.html', '_blank');
 });
+
+document.getElementById('ticket-booking').addEventListener('click',()=>{
+    window.location.href ='ticketbooking.html';
+})
