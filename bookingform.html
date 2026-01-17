@@ -48,15 +48,16 @@
         <div id="tourDetails" class="tour-info" >
             <h3>Tour Details</h3>
             <p><strong>Tour Name:</strong> <span id="tourName"></span></p>
-            <p>📅 <strong>Departure Date:</strong> <input type="date" id="departureDate" readonly></p>
+            <p>📅 <strong>Departure Date:</strong> <input type="date" id="departureDate" name="departureDate" readonly></p>
             <p>📍 <strong>Pick-up Location:</strong> 
-                <select id="pickUpLocation">
+                <select id="pickUpLocation" name="pickUpLocation">
                     <option value="airport">Airport</option>
                     <option value="hotel">Hotel</option>
                     <option value="agency">Travel Agency Office</option>
                 </select>
             </p>
-            <p>⏳ <strong>Duration:</strong> <input type="text" id="duration" readonly></p>
+            <p>⏳ <strong>Duration:</strong> <input type="text" id="duration" name="duration" readonly></p>
+            <p><strong>Price:</strong><input type="text" id="pay" name="pay" readonly></p>
         </div>
         
         <div class="form-group numberOfTicket">
@@ -119,6 +120,7 @@
             const tourName = document.getElementById("tourName");
             var departureDate = document.getElementById("departureDate");
             var duration = document.getElementById("duration");
+            var pay =  document.getElementById("pay");
 
 
             if (destination) {
@@ -126,15 +128,16 @@
 
                 // Định nghĩa tên tour theo điểm đến
                 var tours = {
-                    "HoiAn": { name: "Hoi An Ancient Town Tour", date: "2025-03-15", dura: "3 days - 2 nights" },
-                    "Thailand": { name: "Thailand Cultural Adventure", date: "2025-04-10", dura: "6 days - 5 nights" },
-                    "Korea": { name: "Korea Scenic Tour", date: "2025-04-10", dura: "6 days - 5 nights" }
+                    "HoiAn": { name: "Hoi An Ancient Town Tour", date: "2025-03-15", dura: "3 days - 2 nights", pay: "139$" },
+                    "Thailand": { name: "Thailand Cultural Adventure", date: "2025-04-10", dura: "6 days - 5 nights", pay: "339$"},
+                    "Korea": { name: "Korea Scenic Tour", date: "2025-04-10", dura: "6 days - 5 nights", pay: "739$" }
                 };
 
 
                 tourName.textContent = tours[destination].name || "Tour Not Found";
                 departureDate.value = tours[destination].date;
                 duration.value = tours[destination].dura;
+                pay.value = tours[destination].pay;
             } else {
                 tourDetails.style.display = "none";
             }
@@ -169,6 +172,9 @@
             const childrenNo = document.getElementById("children-no");
             const numChildrenInput = document.getElementById("numChildren");
             const policyCheckInput = document.getElementById("policyCheck");
+            const departureDate = document.getElementById("departureDate");
+            const duration = document.getElementById("duration");
+            const pay =  document.getElementById("pay");
 
             // Getting trimmed values
             const fullname = fullnameInput.value.trim();

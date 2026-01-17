@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticket booking</title>
     <link rel="icon" href="/photo/logo.png">
+    <link rel="stylesheet" href="font/themify-icons/themify-icons.css">
+     <link rel="stylesheet" href="font/fontawesome-free-6.5.2-web/css/all.min.css">
     <link rel="stylesheet" href="/css/ticketbooking.css">
+
 </head>
 <body>
     <header>
@@ -15,16 +18,117 @@
                     <img class="logo" src="/photo/logonoBG.png" alt="">
                 </a>
             </div>
+            <div class="menu-togg" onclick="toggermenu()">
+                 <i class="fa-solid fa-bars"></i>
+            </div>
             <div class="main-menu">
-                    <ul>
-                        <li class="i-menu">Airlines Ticket</li>
-                        <li class="i-menu">Bus Ticket</li>
-                        <li class="i-menu">Airport Transfer</li>
-                        <li class="i-menu">Car rental</li>
-                    </ul>
+                <ul>
+                    <li class="i-menu">Airlines Ticket</li>
+                    <li class="i-menu">Bus Ticket</li>
+                    <li class="i-menu">Airport Transfer</li>
+                    <li class="i-menu">Car rental</li>
+                </ul>
 
             </div>
         </div>
+        
+        <div class="main-menu-mobi">
+            <ul>
+                <li class="i-menu">Airlines Ticket</li>
+                <li class="i-menu">Bus Ticket</li>
+                <li class="i-menu">Airport Transfer</li>
+                <li class="i-menu">Car rental</li>
+            </ul>
+
+        </div>
+
     </header>
+    <div class="main-content">
+        <table>
+            <caption>Ticket booking</caption>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" name="name" >
+                </td>
+            </tr>
+            <tr>
+                <td>Destination</td>
+                <td>
+                    <select name="destination" id="destinationSelect">
+                        <option value="Hanoi">Hanoi</option>
+                        <option value="HaiPhong">HaiPhong</option>
+                        <option value="Hue">Hue</option>
+                        <option value="HoChiMinh">HoChiMinh</option>
+
+                    </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    Round-trip ticket
+                </td>
+                <td>
+                    <input type="checkbox" name="check-roundtrip" id="aroundtrip">
+                </td>
+            </tr>
+            <tr>
+                <td>Number of ticket</td>
+                <td>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" step="1">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="button" name="buttonSEND" value="SEND" onclick="tongTien()">
+                </td>
+            </tr>
+        </table>
+
+        <div class="total">
+            <h3>Total: </h3>
+            <p id="total-money"></p>
+        </div>
+
+    </div>
+    <script>
+        function toggermenu(){
+            menu_mobi = document.querySelector('.main-menu-mobi');
+            if(menu_mobi.style.display === 'block'){
+                menu_mobi.style.display = 'none'
+            }else{
+                menu_mobi.style.display = 'block'
+            }
+            
+        }
+
+        function tongTien(){
+            tong =0;
+            var destination = document.getElementById('destinationSelect').value;
+            if(destination === 'Hanoi'){
+                tong += 2000000;
+            }else if(destination === 'HaiPhong'){
+                tong += 3000000;
+            }else if(destination === 'Hue'){
+                tong += 4000000;
+            }else if(destination === 'HoChiMinh'){
+                tong += 5000000;
+            }
+
+            var roundtrip = document.getElementById('aroundtrip').checked;
+            if(roundtrip == true){
+                tong*=2;
+            }
+
+            var roundtrip = document.getElementById('quantity').value;
+            tong*=roundtrip;
+            
+            document.getElementById('total-money').innerText = tong + ' VND';
+        }
+
+        
+    </script>
+
 </body>
 </html>

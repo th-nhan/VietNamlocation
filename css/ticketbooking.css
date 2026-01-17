@@ -9,12 +9,10 @@ body{
     margin: 0;
 }
 
-header{
-    background-color: #333;
-}
 
 .menu-wrap{
     display: flex;
+    background-color: #333;
 }
 
 .logo-col{
@@ -23,15 +21,21 @@ header{
 }
 
 .logo{
-    width: 25%;
+    width: 35%;
 }
 
-.main-menu{
+.main-menu-mobi{
+    display: none;
+}
+
+.main-menu,
+.main-menu-mobi{
     margin-top: 25px;
     flex: 3;
 }
 
-.main-menu ul{
+.main-menu ul,
+.main-menu-mobi ul{
     display: flex;
     list-style: none;
     justify-content: center;
@@ -47,4 +51,56 @@ header{
 
 .i-menu:hover{
     color: #ddd
+}
+
+.menu-togg{
+    font-size: 20px;
+    color: #fff;
+    display: none;
+    margin-left: 20px;
+}
+
+
+@media screen and (max-width: 860px) {
+    .menu-wrap{
+        display: block;
+    }
+
+    .main-menu-mobi{
+        display: none;
+        background-color: #a8a8a8;
+        padding: 20px 0;
+        width: 40%;
+        margin: 0;
+        height: 1000px; /*tam*/
+        
+    }
+    .main-menu{
+        display: none;
+        
+    }
+
+    .main-menu-mobi ul{
+        display: block;
+    }
+
+    .main-menu-mobi ul li{
+        margin: 20px 0;
+        padding-left: 0;
+        color: #000;
+    }
+
+    .main-menu-mobi ul li:hover{
+        margin: 20px 0;
+        color: #6a6a6a;
+        
+    }  
+
+    .logo-col{
+        display: block;
+    }
+
+    .menu-togg{
+        display: block;
+    }
 }
