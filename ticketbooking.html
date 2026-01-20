@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticket booking</title>
     <link rel="icon" href="/photo/logo.png">
     <link rel="stylesheet" href="font/themify-icons/themify-icons.css">
-     <link rel="stylesheet" href="font/fontawesome-free-6.5.2-web/css/all.min.css">
+    <link rel="stylesheet" href="font/fontawesome-free-6.5.2-web/css/all.min.css">
     <link rel="stylesheet" href="/css/ticketbooking.css">
 
 </head>
+
 <body>
     <header>
         <div class="menu-wrap">
@@ -19,116 +21,532 @@
                 </a>
             </div>
             <div class="menu-togg" onclick="toggermenu()">
-                 <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-bars"></i>
             </div>
             <div class="main-menu">
                 <ul>
-                    <li class="i-menu">Airlines Ticket</li>
-                    <li class="i-menu">Bus Ticket</li>
-                    <li class="i-menu">Airport Transfer</li>
-                    <li class="i-menu">Car rental</li>
+                    <li class="i-menu"><a href="#booking-tab">Airlines Ticket</a></li>
+                    <li class="i-menu"><a href="#map">Bus Ticket</a></li>
+                    <li class="i-menu"><a href="">Car rental</a></li>
                 </ul>
 
             </div>
         </div>
-        
+
         <div class="main-menu-mobi">
             <ul>
                 <li class="i-menu">Airlines Ticket</li>
                 <li class="i-menu">Bus Ticket</li>
-                <li class="i-menu">Airport Transfer</li>
                 <li class="i-menu">Car rental</li>
             </ul>
 
         </div>
 
     </header>
-    <div class="main-content">
-        <table>
-            <caption>Ticket booking</caption>
-            <tr>
-                <td>Name</td>
-                <td>
-                    <input type="text" name="name" >
-                </td>
-            </tr>
-            <tr>
-                <td>Destination</td>
-                <td>
-                    <select name="destination" id="destinationSelect">
-                        <option value="Hanoi">Hanoi</option>
-                        <option value="HaiPhong">HaiPhong</option>
-                        <option value="Hue">Hue</option>
-                        <option value="HoChiMinh">HoChiMinh</option>
 
-                    </select>
-                </td>
-
-            </tr>
-            <tr>
-                <td>
-                    Round-trip ticket
-                </td>
-                <td>
-                    <input type="checkbox" name="check-roundtrip" id="aroundtrip">
-                </td>
-            </tr>
-            <tr>
-                <td>Number of ticket</td>
-                <td>
-                    <input type="number" id="quantity" name="quantity" min="1" value="1" step="1">
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" style="text-align: center;">
-                    <input type="button" name="buttonSEND" value="SEND" onclick="tongTien()">
-                </td>
-            </tr>
-        </table>
-
-        <div class="total">
-            <h3>Total: </h3>
-            <p id="total-money"></p>
+    <section class="homepage" id="home">
+        <div class="content">
+            <div class="text">
+                <h1>Tourist attractions and local cuisine</h1>
+                <p>Find Cheap Flights & Airline Deals to Anywhere in the World
+                    <br>Prepare and create lasting memories
+                </p>
+            </div>
+            <!-- From Uiverse.io by cssbuttons-io -->
+            <button class="learn-more">
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <span class="button-text"><a href="#explore">Learn More</a></span>
+            </button>
         </div>
+    </section>
 
-    </div>
+    <section class="booking-tab" id="booking-tab">
+        <div class="booking-widget">
+            <div class="tabs">
+                <div class="tab-item active">Flights booking</div>
+                <!-- From Uiverse.io by elijahgummer -->
+            </div>
+
+            <div class="booking-content">
+
+                <div class="input-group">
+                    <div class="label">
+                        <i class="fa-solid fa-plane-departure"></i> From
+                    </div>
+                    <div class="select-wrapper">
+                        <select class="flight-select" id="from-location">
+                            <optgroup label="United Kingdom">
+                                <option value="LHR" selected>London (LHR)</option>
+                                <option value="LGW">Gatwick (LGW)</option>
+                                <option value="MAN">Manchester (MAN)</option>
+                            </optgroup>
+                            <optgroup label="Vietnam">
+                                <option value="SGN">Ho Chi Minh (SGN)</option>
+                                <option value="HAN">Hanoi (HAN)</option>
+                                <option value="DAD">Da Nang (DAD)</option>
+                            </optgroup>
+                            <optgroup label="Japan">
+                                <option value="NRT">Tokyo Narita (NRT)</option>
+                                <option value="HND">Tokyo Haneda (HND)</option>
+                            </optgroup>
+                        </select>
+                        <i class="fa-solid fa-chevron-down select-arrow"></i>
+                    </div>
+                </div>
+
+                <div class="swap-btn">
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                </div>
+
+                <div class="input-group">
+                    <div class="label">
+                        <i class="fa-solid fa-plane-arrival"></i> To
+                    </div>
+                    <div class="select-wrapper">
+                        <select class="flight-select" id="to-location">
+                            <optgroup label="United Kingdom">
+                                <option value="LHR">London (LHR)</option>
+                                <option value="LGW">Gatwick (LGW)</option>
+                            </optgroup>
+                            <optgroup label="China">
+                                <option value="PVG">Shanghai (PVG)</option>
+                                <option value="PEK">Beijing (PEK)</option>
+                                <option value="SZX">Shenzhen (SZX)</option>
+                            </optgroup>
+                            <optgroup label="Vietnam">
+                                <option value="SGN">Ho Chi Minh (SGN)</option>
+                                <option value="HAN">Hanoi (HAN)</option>
+                                <option value="DAD">Da Nang (DAD)</option>
+                            </optgroup>
+                            <optgroup label="South Korea">
+                                <option value="ICN">Seoul (ICN)</option>
+                                <option value="PUS">Busan (PUS)</option>
+                            </optgroup>
+                            <optgroup label="USA">
+                                <option value="JFK">New York (JFK)</option>
+                                <option value="LAX">Los Angeles (LAX)</option>
+                            </optgroup>
+                        </select>
+                        <i class="fa-solid fa-chevron-down select-arrow"></i>
+                    </div>
+                </div>
+
+            </div>
+            <div class="btn-search-box">
+                <button class="btn-search">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="explore">
+        <!-- From Uiverse.io by Yaya12085 -->
+        <h1>Explore Our Most Popular Flights</h1>
+        <div class="cards" id="card-list">
+            <div class="card">
+                <div class="image">
+                    <img src="https://www.pelago.com/img/destinations/da-nang/0328-0214_da-nang.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#">
+                        <span class="title">
+                            Da Nang - Vietnam
+                        </span>
+                    </a>
+
+                    <p class="desc">
+                        Da Nang, a prominent city on the coast of Central Vietnam renowned for its majestic natural
+                        beauty and unique attractions, is an ideal choice for those who love to explore and enjoy a
+                        memorable vacation.
+                    </p>
+
+                    <a class="action" href="#">
+                        Find out more
+                        <span aria-hidden="true">
+                            →
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2025/08/25/3bb77d366da943daa2ff2f50b6a67356_Taipei_101__101__Xinyi_district__Taiwan.jpg"
+                        alt="">
+                </div>
+                <div class="content">
+                    <a href="#">
+                        <span class="title">
+                            Taipei 101 - Taiwan
+                        </span>
+                    </a>
+
+                    <p class="desc">
+                        Taipei 101, located in the bustling Xinyi District of Taipei City, once held the record as the
+                        world's tallest building from 2004 to 2010. With unique architecture inspired by bamboo stalks
+                        and the shape of traditional pagodas, Taipei 101 stands as a symbol of Taiwan's economic and
+                        cultural development.
+                    </p>
+
+                    <a class="action" href="#">
+                        Find out more
+                        <span aria-hidden="true">
+                            →
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="https://phuotvivu.com/blog/wp-content/uploads/2024/10/bangkok-1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#">
+                        <span class="title">
+                            Bangkok - Thailand
+                        </span>
+                    </a>
+
+                    <p class="desc">
+                        Thailand, the Land of Smiles, is a captivating Southeast Asian destination that beckons
+                        travelers with its rich cultural heritage, stunning beaches, and vibrant street life. From the
+                        bustling metropolis of Bangkok to the serene islands of Phuket and Koh Samui, this tropical
+                        paradise offers a diverse array of experiences for every type of adventurer.
+                    </p>
+
+                    <a class="action" href="#">
+                        Find out more
+                        <span aria-hidden="true">
+                            →
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="https://image.vietnam.travel/sites/default/files/styles/top_banner/public/2017-06/vietnam-travel-5.jpg?itok=XVnHP3ty"
+                        alt="">
+                </div>
+                <div class="content">
+                    <a href="#">
+                        <span class="title">
+                            Hanoi - Vietnam
+                        </span>
+                    </a>
+
+                    <p class="desc">
+                        Welcome to Hanoi, the captivating capital of Vietnam, where ancient traditions blend seamlessly
+                        with modern vibrancy. This bustling metropolis, steeped in over a thousand years of history,
+                        offers visitors a mesmerizing tapestry of cultural experiences, architectural marvels, and
+                        culinary delights. At the heart of the city lies the tranquil Hoan Kiem Lake, a serene oasis
+                        surrounded by the chaotic energy of the Old Quarter.
+                    </p>
+
+                    <a class="action" href="#">
+                        Find out more
+                        <span aria-hidden="true">
+                            →
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="https://phuotvivu.com/blog/wp-content/uploads/2024/12/Busan.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#">
+                        <span class="title">
+                            Busan - South Korea
+                        </span>
+                    </a>
+
+                    <p class="desc">
+                        Located on the southeastern coast of South Korea, Busan serves as a vibrant blend of urban and
+                        natural landscapes where the craggy mountains meet the pristine ocean. The city, which is the
+                        country's second-largest, boasts four distinct seasons, with humid summers ideal for beach
+                        activities and mild winters that seldom witness snow, reinforcing its reputation as a year-round
+                        destination.
+                    </p>
+
+                    <a class="action" href="#">
+                        Find out more
+                        <span aria-hidden="true">
+                            →
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="https://vietmytravel.com/wp-content/uploads/2017/12/tf_160711_phuket.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#">
+                        <span class="title">
+                            Phuket - Thailand
+                        </span>
+                    </a>
+
+                    <p class="desc">
+                        Resting in the Andaman Sea, Phuket proudly holds the title of Thailand's largest island. It's a
+                        place where towering limestone cliffs collide with crystalline blue waters, and sprawling
+                        jungle-clad hills descend to immaculate sandy beaches. It flaunts a tropical climate that ushers
+                        in warm temperatures throughout the year, crafted with a brief wet season from May to October
+                        and drier, sun-soaked days from November to April.
+                    </p>
+
+                    <a class="action" href="#">
+                        Find out more
+                        <span aria-hidden="true">
+                            →
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="https://ik.imagekit.io/tvlk/blog/2023/05/penang_temple-4580960-Copy.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#">
+                        <span class="title">
+                            Penang - Malaysia
+                        </span>
+                    </a>
+
+                    <p class="desc">
+                        Welcome to Penang, a vibrant gem of an island nestled in the northwest corner of Malaysia,
+                        surrounded by the shimmering waters of the Strait of Malacca. A striking blend of urban scapes
+                        and natural vistas, Penang basks in a tropical climate that promises warmth and humidity
+                        year-round.
+                    </p>
+
+                    <a class="action" href="#">
+                        Find out more
+                        <span aria-hidden="true">
+                            →
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="https://ca-times.brightspotcdn.com/dims4/default/40d675d/2147483647/strip/true/crop/1643x1080+0+0/resize/1200x789!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F63%2Ff2%2Fd3263df6400d9bdf95423021035a%2Fadobestock-177536059.jpeg"
+                        alt="">
+                </div>
+                <div class="content">
+                    <a href="#">
+                        <span class="title">
+                            Jeju Island - South Korea
+                        </span>
+                    </a>
+
+                    <p class="desc">
+                        Perched like a volcanic gem in the Korea Strait, Jeju Island is the largest island in South
+                        Korea. The island, known for its subtropical climate, is cloaked by Hallasan Mountain and
+                        experiences mild winters and warm summers with intermittent rainfall all year round. Scattered
+                        across the island are unique ecosystems formed by lava tubes, waterfalls, and striking coastal
+                        structures.
+                    </p>
+
+                    <a class="action" href="#">
+                        Find out more
+                        <span aria-hidden="true">
+                            →
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="https://www.japan365days.com/img/tokyo/sensoji_temple/sensoji-temple-asakusa-tokyo.jpg"
+                        alt="">
+                </div>
+                <div class="content">
+                    <a href="#">
+                        <span class="title">
+                            Asakusa Temple (Senso-ji) - Tokyo's Historic Heart
+                        </span>
+                    </a>
+
+                    <p class="desc">
+                        Asakusa Temple, located in Eastern Tokyo, is one of the most famous tourist attractions in
+                        Japan. This ancient site symbolizes Japanese culture and history, attracting millions of
+                        visitors each year.
+                    </p>
+
+                    <a class="action" href="#">
+                        Find out more
+                        <span aria-hidden="true">
+                            →
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="pagination" id="pagination">
+        </div>
+    </section>
+
+    <section id="map">
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d62706.82667634263!2d106.6025686686603!3d10.797448827725854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x31752c543265b70d%3A0x6e768df217bcc31d!2zQuG6v24gWGUgMi4gTWnhu4FuIFTDonksIDM5NSDEkC4gS2luaCBExrDGoW5nIFbGsMahbmcsIEFuIEzhuqFjLCBCw6xbmggVMOibiwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!3m2!1d10.742388!2d106.609425!4m5!1s0x317529367d3630f9%3A0x86701831c2557451!2zU8OibiBiYXkgVMOibiBTxqFuIE5o4bqldCAoU0dOKSwgxJDGsOG7nW5nIFRyxrDhu51uZyBTxqFuLCBQaMaw4budbmcgMiwgVMOibiBCw6xuaCwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!3m2!1d10.818463!2d106.6588245!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-content_top">
+                <div class="logo">
+                    <a href="#">
+                        <img src="photo/logonoBG.png" alt="logo">
+                    </a>
+                </div>
+                <div class="media-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+
+            </div>
+            <div class="links-boxes">
+                <ul class="box">
+                    <li class="link_name">VietNam Location</li>
+                    <li><a href="home.html">Services</a></li>
+                    <li><a href="home.html">Destination</a></li>
+                    <li><a href="home.html">Contact</a></li>
+                    <li><a href="home.html">About us</a></li>
+                    <li><a href="home.html">Reviews</a></li>
+
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Services</li>
+                    <li><a href="#explore">Flights booking</a></li>
+                    <li><a href="#map">Bus ticket</a></li>
+                   
+
+
+                </ul>
+
+                <ul class="box payment">
+                    <li class="link_name">Payment</li>
+                    <div class="payment-element">
+                        <a href="#"><i class="fa-brands fa-cc-paypal"></i></a>
+                        <a href="#"><i class="fa-brands fa-cc-visa"></i></a>
+                        <a href="#"><i class="fa-brands fa-cc-mastercard"></i></a>
+                        <a href="#"><i class="fa-brands fa-google-pay"></i></a>
+                        <a href="#"><i class="fa-brands fa-cc-apple-pay"></i></a>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        function toggermenu(){
+        function toggermenu() {
             menu_mobi = document.querySelector('.main-menu-mobi');
-            if(menu_mobi.style.display === 'block'){
+            if (menu_mobi.style.display === 'block') {
                 menu_mobi.style.display = 'none'
-            }else{
+            } else {
                 menu_mobi.style.display = 'block'
             }
-            
+
         }
 
-        function tongTien(){
-            tong =0;
-            var destination = document.getElementById('destinationSelect').value;
-            if(destination === 'Hanoi'){
-                tong += 2000000;
-            }else if(destination === 'HaiPhong'){
-                tong += 3000000;
-            }else if(destination === 'Hue'){
-                tong += 4000000;
-            }else if(destination === 'HoChiMinh'){
-                tong += 5000000;
-            }
 
-            var roundtrip = document.getElementById('aroundtrip').checked;
-            if(roundtrip == true){
-                tong*=2;
-            }
 
-            var roundtrip = document.getElementById('quantity').value;
-            tong*=roundtrip;
-            
-            document.getElementById('total-money').innerText = tong + ' VND';
-        }
 
-        
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // CẤU HÌNH
+            const cardsPerPage = 3; // Số card muốn hiện mỗi trang
+            const cardContainer = document.getElementById('card-list');
+            const paginationContainer = document.getElementById('pagination');
+            const cards = cardContainer.getElementsByClassName('card');
 
+            const totalCards = cards.length;
+            const totalPages = Math.ceil(totalCards / cardsPerPage);
+            let currentPage = 1;
+
+            // Hàm hiển thị card dựa trên trang hiện tại
+            function showPage(page) {
+                // Validate trang (không nhỏ hơn 1, không lớn hơn tổng số trang)
+                if (page < 1) page = 1;
+                if (page > totalPages) page = totalPages;
+
+                currentPage = page;
+
+                // Tính toán vị trí bắt đầu và kết thúc
+                const start = (page - 1) * cardsPerPage;
+                const end = start + cardsPerPage;
+
+                // Ẩn tất cả và chỉ hiện các card trong khoảng start -> end
+                for (let i = 0; i < totalCards; i++) {
+                    if (i >= start && i < end) {
+                        cards[i].style.display = "block"; // Hoặc "flex" tùy layout gốc
+                    } else {
+                        cards[i].style.display = "none";
+                    }
+                }
+
+                // Vẽ lại thanh phân trang
+                renderPagination();
+            }
+
+            // Hàm tạo các nút phân trang
+            function renderPagination() {
+                paginationContainer.innerHTML = ""; // Xóa nút cũ
+
+                // Nút Prev
+                const prevBtn = document.createElement('a');
+                prevBtn.href = "#";
+                prevBtn.className = `page-link ${currentPage === 1 ? 'disabled' : ''}`;
+                prevBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+                prevBtn.onclick = (e) => {
+                    e.preventDefault();
+                    if (currentPage > 1) showPage(currentPage - 1);
+                };
+                paginationContainer.appendChild(prevBtn);
+
+                // Các nút số trang
+                for (let i = 1; i <= totalPages; i++) {
+                    const link = document.createElement('a');
+                    link.href = "#";
+                    link.className = `page-link ${i === currentPage ? 'active' : ''}`;
+                    link.textContent = i;
+                    link.onclick = (e) => {
+                        e.preventDefault();
+                        showPage(i);
+                    };
+                    paginationContainer.appendChild(link);
+                }
+
+                // Nút Next
+                const nextBtn = document.createElement('a');
+                nextBtn.href = "#";
+                nextBtn.className = `page-link ${currentPage === totalPages ? 'disabled' : ''}`;
+                nextBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+                nextBtn.onclick = (e) => {
+                    e.preventDefault();
+                    if (currentPage < totalPages) showPage(currentPage + 1);
+                };
+                paginationContainer.appendChild(nextBtn);
+            }
+
+            // Khởi chạy lần đầu
+            showPage(1);
+        });
+    </script>
 </body>
+
 </html>
